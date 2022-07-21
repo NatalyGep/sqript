@@ -147,3 +147,36 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+/*=============== VIDEO ===============*/ 
+
+const videoFile = document.getElementById('video-file'),
+    videoButton = document.getElementById('video-button'),
+    videoIcon = document.getElementById('video-icon')
+
+function playPause() {
+    if (videoFile.paused) {
+        // video play
+        videoFile.play()
+        // change the icon
+        videoIcon.classList.add('ri-pause-line')
+        videoIcon.classList.remove('ri-play-line')
+    } else {
+        // pause video
+        videoFile.pause()
+        // change the icon
+                videoIcon.classList.remove('ri-pause-line')
+                videoIcon.classList.add('ri-play-line')
+    }
+}
+
+videoButton.addEventListener('click', playPause)
+
+function finalVideo(){
+    // videoends, icon change 
+videoIcon.classList.remove('ri-pause-line')
+videoIcon.classList.add('ri-play-line')
+}
+
+// ended 
+videoFile.addEventListener('ended', finalVideo)
