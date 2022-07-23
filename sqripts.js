@@ -211,3 +211,12 @@ sr.reveal(`.about__img-overlay,
     origin: 'right',
     interval: 100,
 })
+
+
+/*==================== loader ====================*/
+onload = () =>{
+	const load = document.getElementById('load')
+	setTimeout(() =>{
+load.style.display = 'none'
+	}, 2500)
+}
